@@ -1,0 +1,17 @@
+{
+  "name": "api-node-radar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "firebase": "^9.6.6",
+    "mongodb": "^4.3.1"
+  }
+}
