@@ -1,20 +1,15 @@
-const express=require('express')
-const cors=require('cors')
-const app=express()
-app.use(express.json())
-app.use(cors())
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const config = require('./config');
+const studentRoutes = require('./routes/student-routes');
 
-app.post('/create',async(req,res) =>{
-    const data = req.body;
-    console.log("data",data);
+const app = express();
 
+app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json());
 
-    res.send({msg:'user added'})
-})
+app.use('/api', studentRoutes.routes);
 
-app.get('/', (req, res) => {
-    res.send("Hello world!")
-})
-
-app.listen(40000,() => console.log("Up &Running *4000"));
-
+app.listen(config.port, () => console.log('App is listening on url http://localhost:' + config.port));
